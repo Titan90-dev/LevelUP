@@ -1,6 +1,33 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 
+import {
+  Home,
+  Dumbbell,
+  BookOpen,
+  Target,
+  Trophy,
+  User,
+  Settings,
+  CheckCircle,
+  Clock,
+  Flame,
+  ChevronRight,
+  ClipboardList,
+  Heart,
+  Brush,
+  Smile,
+  Star,
+  Zap,
+  Sun,
+  Pencil,
+  X,
+  Plus,
+  AlertTriangle,
+  Sparkles,
+} from "lucide-react";
+
+
 const categorias = [
   { nome: "Todas", emoji: "📋" },
   { nome: "Saúde", emoji: "❤️" },
@@ -10,6 +37,22 @@ const categorias = [
   { nome: "Bem-estar", emoji: "🧘" },
   { nome: "Outros", emoji: "⭐" },
 ];
+
+const iconesCategorias = {
+  Todas: ClipboardList,
+  Saúde: Heart,
+  Estudos: BookOpen,
+  Exercícios: Dumbbell,
+  Organização: Brush,
+  "Bem-estar": Smile,
+  Outros: Star,
+};
+
+const IconeCategoria = ({ nome, size = 17 }) => {
+  const Icone = iconesCategorias[nome] || Star;
+
+  return <Icone size={size} strokeWidth={1.8} />;
+};
 
 const categoriasAtividade = categorias.filter(
   (categoria) => categoria.nome !== "Todas",
@@ -477,7 +520,10 @@ function App() {
     <main className="app">
       <header className="cabecalho">
         <div className="marca">
-          <div className="icone-logo">✦</div>
+          <div className="icone-logo">
+  <Sparkles size={22} strokeWidth={1.8} />
+</div>
+
 
           <div>
             <p className="subtitulo">
@@ -508,7 +554,10 @@ function App() {
 
       <section className="estatisticas">
         <div className="card-estatistica card-xp">
-          <div className="icone-estatistica">⚡</div>
+          <div className="icone-estatistica">
+  <Zap size={22} strokeWidth={1.8} />
+</div>
+
 
           <div>
             <span>XP total</span>
@@ -518,7 +567,10 @@ function App() {
         </div>
 
         <div className="card-estatistica card-hoje">
-          <div className="icone-estatistica">☀️</div>
+          <div className="icone-estatistica">
+  <Sun size={22} strokeWidth={1.8} />
+</div>
+
 
           <div>
             <span>XP de hoje</span>
@@ -528,7 +580,10 @@ function App() {
         </div>
 
         <div className="card-estatistica card-sequencia">
-          <div className="icone-estatistica">🔥</div>
+          <div className="icone-estatistica">
+  <Flame size={22} strokeWidth={1.8} />
+</div>
+
 
           <div>
             <span>Sequência atual</span>
@@ -608,8 +663,9 @@ function App() {
               }
               type="button"
             >
-              {categoria.emoji} {categoria.nome}
-            </button>
+              <IconeCategoria nome={categoria.nome} />
+              <span>{categoria.nome}</span>
+          </button>
           ))}
         </div>
 
@@ -663,7 +719,7 @@ function App() {
                             key={item.nome}
                             value={item.nome}
                           >
-                            {item.emoji} {item.nome}
+                            {item.nome}
                           </option>
                         ))}
                       </select>
@@ -725,7 +781,10 @@ function App() {
                     }
                     type="button"
                   >
-                    {atividade.concluida ? "✓" : ""}
+                    {atividade.concluida && (
+  <CheckCircle size={18} strokeWidth={2} />
+)}
+
                   </button>
 
                   <div className="informacoes-atividade">
@@ -740,8 +799,10 @@ function App() {
                     </div>
 
                     <p className="categoria-atividade">
-                      {categoria.emoji} {atividade.categoria}
-                    </p>
+  <IconeCategoria nome={atividade.categoria} size={15} />
+  <span>{atividade.categoria}</span>
+</p>
+
                   </div>
 
                   <span className="xp-atividade">
@@ -750,7 +811,7 @@ function App() {
                   </span>
 
                   <div className="atividade-acoes">
-                    <button
+                    <button 
                       className="botao-editar"
                       onClick={() =>
                         iniciarEdicao(atividade)
@@ -758,7 +819,8 @@ function App() {
                       aria-label={`Editar ${atividade.nome}`}
                       type="button"
                     >
-                      ✎
+                      <Pencil size={16} strokeWidth={1.8} />
+
                     </button>
 
                     <button
@@ -769,7 +831,8 @@ function App() {
                       aria-label={`Remover ${atividade.nome}`}
                       type="button"
                     >
-                      ×
+                      <X size={17} strokeWidth={1.8} />
+
                     </button>
                   </div>
                 </article>
@@ -783,7 +846,10 @@ function App() {
           onSubmit={adicionarAtividade}
         >
           <div className="campo-com-icone">
-            <span>✦</span>
+            <span>
+  <Sparkles size={17} strokeWidth={1.8} />
+</span>
+
 
             <input
               type="text"
@@ -808,7 +874,7 @@ function App() {
                 key={categoria.nome}
                 value={categoria.nome}
               >
-                {categoria.emoji} {categoria.nome}
+                {categoria.nome}
               </option>
             ))}
           </select>
@@ -829,9 +895,10 @@ function App() {
           </div>
 
           <button type="submit" className="botao-adicionar">
-            <span>+</span>
-            Adicionar
-          </button>
+  <Plus size={18} strokeWidth={2} />
+  <span>Adicionar</span>
+</button>
+
         </form>
       </section>
 
@@ -902,7 +969,8 @@ function App() {
         onClick={limparDados}
         type="button"
       >
-        <span>⚠</span>
+        <AlertTriangle size={17} strokeWidth={1.8} />
+
         Apagar todos os dados
       </button>
     </main>

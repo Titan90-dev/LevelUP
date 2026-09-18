@@ -1285,3 +1285,51 @@ strong {
     font-size: 0.78rem;
   }
 }
+.filtro,
+.categoria-atividade,
+.botao-adicionar,
+.botao-check,
+.botao-editar,
+.botao-remover,
+.campo-com-icone,
+.botao-limpar,
+.icone-estatistica,
+.icone-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filtro {
+  gap: 7px;
+}
+
+.categoria-atividade {
+  gap: 5px;
+}
+
+.atividade-acoes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.botao-adicionar {
+  gap: 7px;
+}
+
+.campo-com-icone {
+  gap: 8px;
+}
+
+.botao-limpar {
+  gap: 7px;
+}
+
+.icone-estatistica svg,
+.icone-logo svg,
+.filtro svg,
+.categoria-atividade svg,
+button svg {
+  flex-shrink: 0;
+}
