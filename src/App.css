@@ -1176,3 +1176,72 @@ strong {
     0 18px 42px rgba(0, 0, 0, 0.4);
   transform: translateY(-4px);
 }
+/* Ajustes para telas pequenas */
+@media (max-width: 600px) {
+  /* Cards das atividades */
+  .activity-card,
+  .task-card,
+  .atividade-card,
+  .card-atividade {
+    min-height: 0;
+    height: auto;
+    padding: 20px 18px;
+    margin-bottom: 16px;
+    border-radius: 24px;
+  }
+
+  /* Reduz o espaço interno dos elementos do card */
+  .activity-card h3,
+  .task-card h3,
+  .atividade-card h3,
+  .card-atividade h3 {
+    font-size: 1.45rem;
+    margin: 0 0 10px;
+  }
+
+  .activity-card p,
+  .task-card p,
+  .atividade-card p,
+  .card-atividade p {
+    margin: 6px 0;
+    font-size: 1rem;
+  }
+
+  /* Botões de editar/excluir */
+  .activity-card button,
+  .task-card button,
+  .atividade-card button,
+  .card-atividade button {
+    width: 52px;
+    height: 52px;
+    padding: 8px;
+  }
+
+  /* Filtros de categorias */
+  .category-list,
+  .categories,
+  .category-filters,
+  .filtros-categoria {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+
+  .category-list::-webkit-scrollbar,
+  .categories::-webkit-scrollbar,
+  .category-filters::-webkit-scrollbar,
+  .filtros-categoria::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-list button,
+  .categories button,
+  .category-filters button,
+  .filtros-categoria button {
+    flex: 0 0 auto;
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
