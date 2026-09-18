@@ -1,0 +1,16 @@
+{
+  "name": "Level UP",
+  "short_name": "Level UP",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#11100e",
+  "theme_color": "#11100e",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
