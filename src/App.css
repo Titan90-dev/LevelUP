@@ -1176,72 +1176,112 @@ strong {
     0 18px 42px rgba(0, 0, 0, 0.4);
   transform: translateY(-4px);
 }
-/* Ajustes para telas pequenas */
+/* Ajuste compacto dos cards no celular */
 @media (max-width: 600px) {
-  /* Cards das atividades */
-  .activity-card,
-  .task-card,
-  .atividade-card,
-  .card-atividade {
-    min-height: 0;
-    height: auto;
-    padding: 20px 18px;
-    margin-bottom: 16px;
-    border-radius: 24px;
-  }
-
-  /* Reduz o espaço interno dos elementos do card */
-  .activity-card h3,
-  .task-card h3,
-  .atividade-card h3,
-  .card-atividade h3 {
-    font-size: 1.45rem;
-    margin: 0 0 10px;
-  }
-
-  .activity-card p,
-  .task-card p,
-  .atividade-card p,
-  .card-atividade p {
-    margin: 6px 0;
-    font-size: 1rem;
-  }
-
-  /* Botões de editar/excluir */
-  .activity-card button,
-  .task-card button,
-  .atividade-card button,
-  .card-atividade button {
-    width: 52px;
-    height: 52px;
-    padding: 8px;
-  }
-
-  /* Filtros de categorias */
-  .category-list,
-  .categories,
-  .category-filters,
-  .filtros-categoria {
-    display: flex;
+  .atividade {
+    align-items: center;
+    flex-wrap: nowrap;
     gap: 10px;
-    overflow-x: auto;
-    padding-bottom: 8px;
-    scrollbar-width: none;
+    padding: 11px 12px;
+    border-radius: 13px;
   }
 
-  .category-list::-webkit-scrollbar,
-  .categories::-webkit-scrollbar,
-  .category-filters::-webkit-scrollbar,
-  .filtros-categoria::-webkit-scrollbar {
+  .botao-check {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+  }
+
+  .informacoes-atividade,
+  .atividade-info {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .atividade-nome,
+  .informacoes-atividade h3,
+  .atividade-info h3 {
+    font-size: 0.86rem;
+    line-height: 1.2;
+  }
+
+  .categoria-atividade,
+  .atividade-categoria {
+    margin-top: 3px;
+    font-size: 0.68rem;
+  }
+
+  .informacoes-atividade p {
+    margin-top: 3px;
+    font-size: 0.7rem;
+  }
+
+  .xp-atividade,
+  .atividade-xp {
+    flex: 0 0 auto;
+    margin-left: 0;
+    font-size: 0.7rem;
+  }
+
+  .xp-atividade strong,
+  .atividade-xp strong {
+    font-size: 0.8rem;
+  }
+
+  .xp-atividade small,
+  .atividade-xp small {
+    font-size: 0.58rem;
+  }
+
+  .atividade-acoes {
+    width: auto;
+    flex: 0 0 auto;
+    gap: 4px;
+  }
+
+  .botao-editar,
+  .botao-remover {
+    width: 29px;
+    height: 29px;
+    border-radius: 7px;
+    font-size: 0.85rem;
+  }
+
+  .badge-concluida {
+    padding: 3px 6px;
+    font-size: 0.54rem;
+  }
+
+  .lista-atividades {
+    gap: 8px;
+  }
+}
+
+/* Ajuste extra para celulares muito estreitos */
+@media (max-width: 380px) {
+  .atividade {
+    gap: 7px;
+    padding: 9px 10px;
+  }
+
+  .atividade-nome,
+  .informacoes-atividade h3,
+  .atividade-info h3 {
+    font-size: 0.8rem;
+  }
+
+  .xp-atividade,
+  .atividade-xp {
     display: none;
   }
 
-  .category-list button,
-  .categories button,
-  .category-filters button,
-  .filtros-categoria button {
-    flex: 0 0 auto;
-    padding: 12px 20px;
-    font-size: 1rem;
+  .botao-editar,
+  .botao-remover {
+    width: 27px;
+    height: 27px;
+    font-size: 0.78rem;
   }
 }
